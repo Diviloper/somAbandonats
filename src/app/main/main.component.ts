@@ -115,7 +115,7 @@ export class MainComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.connecterService.afegirIncidencia({
-        comment: result,
+        description: result,
         lat: this.lat,
         lng: this.lon
       });
