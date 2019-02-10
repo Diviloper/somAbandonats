@@ -24,4 +24,8 @@ export class ConnecterService {
       dni: dni
     });
   }
+
+  async getPeople(): Promise<any> {
+    return this.httpClient.get(this.api + '/users');
+  }
 }
