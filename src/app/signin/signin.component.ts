@@ -28,7 +28,11 @@ export class SigninComponent implements OnInit {
   }
 
   previousStep() {
-    this.step--;
+    if (this.step === 1) {
+      this.router.navigate((['login']));
+    } else {
+      this.step--;
+    }
   }
 
   nextStep() {

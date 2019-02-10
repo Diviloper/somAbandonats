@@ -1,8 +1,8 @@
-<div>
+<div class="body">
   <h1 class="mat-typography">Registre</h1>
 
 
-  <div *ngIf="step===1">
+  <div class="form" *ngIf="step===1">
     <mat-form-field>
       <input matInput type="text" placeholder="Correu electrònic" [(ngModel)]="email">
     </mat-form-field>
@@ -11,7 +11,7 @@
     </mat-form-field>
   </div>
 
-  <div *ngIf="step === 2">
+  <div class="form" *ngIf="step === 2">
     <mat-form-field>
       <input matInput type="text" placeholder="Nom" [(ngModel)]="nom">
     </mat-form-field>
@@ -34,7 +34,7 @@
     </mat-form-field>
   </div>
   <div fxLayout="row">
-    <button mat-raised-button *ngIf="step >= 1" (click)="previousStep()">Anterior</button>
-    <button mat-raised-button (click)="nextStep()">{{step <= 3 ? 'Següent' : 'Registrar-se'}}</button>
+    <button mat-raised-button class="green" (click)="previousStep()">{{step > 1 ? 'Anterior' : 'Tornar'}}</button>
+    <button mat-raised-button class="green" (click)="nextStep()">{{step < 3 ? 'Següent' : 'Registrar-se'}}</button>
   </div>
 </div>
