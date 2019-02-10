@@ -28,4 +28,16 @@ export class ConnecterService {
   async getPeople(): Promise<any> {
     return this.httpClient.get(this.api + '/users');
   }
+
+  async getIncidencies(): Promise<any> {
+    return this.httpClient.get(this.api + '/incidents');
+  }
+
+  async afegirIncidencia(data: {}) {
+    return this.httpClient.post(this.api + '/incidents', data);
+  }
+
+  async afegirRute(data: {}) {
+    return this.httpClient.post(this.api + '/routes', data);
+  }
 }

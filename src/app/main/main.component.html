@@ -3,17 +3,22 @@
        leaflet
        [leafletOptions]="options" [leafletLayers]="layers" (leafletClick)="onClick($event)">
   </div>
-  <button mat-fab>
+  <button mat-fab (click)="afegirIncidencia()">
     <mat-icon>add</mat-icon>
   </button>
 </div>
 
 <div *ngIf="screen === 2" style="height: 90vh">
 
-  <h1>Persones properes</h1>
+  <h1 class="mat-typography">Persones properes</h1>
 
-  <div *ngFor="let person of people">
-
+  <div *ngFor="let person of people" fxLayout="row">
+    <mat-icon>person</mat-icon>
+    <div fxLayout="column">
+      <h5>Nom</h5>
+      <p>dades</p>
+      <hr>
+    </div>
   </div>
 
 </div>

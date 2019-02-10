@@ -5,13 +5,13 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {LoginComponent} from './login/login.component';
 import {RouterModule} from '@angular/router';
-import {MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatRadioModule} from '@angular/material';
+import {MatButtonModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule, MatRadioModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SigninComponent} from './signin/signin.component';
 import {HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
-import { MainComponent } from './main/main.component';
+import {IncidenciesDialogComponent, MainComponent, RouteDialogComponent} from './main/main.component';
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
@@ -19,7 +19,9 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
     AppComponent,
     LoginComponent,
     SigninComponent,
-    MainComponent
+    MainComponent,
+    IncidenciesDialogComponent,
+    RouteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,7 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
     MatInputModule,
     MatRadioModule,
     MatIconModule,
+    MatDialogModule,
     FlexLayoutModule,
     AppRoutingModule,
     RouterModule,
@@ -39,7 +42,11 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
     LeafletModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    IncidenciesDialogComponent,
+    RouteDialogComponent
+  ]
 })
 export class AppModule {
 }
