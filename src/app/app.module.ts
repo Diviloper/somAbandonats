@@ -26,6 +26,7 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
@@ -37,7 +38,6 @@ import {LeafletModule} from '@asymmetrik/ngx-leaflet';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
     LeafletModule.forRoot(),
     LeafletModule
   ],

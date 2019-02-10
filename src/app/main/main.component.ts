@@ -2,6 +2,8 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {circle, icon, latLng, Layer, marker, tileLayer} from 'leaflet';
 import {ConnecterService} from '../connecter.service';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-main',
@@ -20,6 +22,7 @@ export class MainComponent implements OnInit {
   people: Array<{}>;
 
   constructor(private connecterService: ConnecterService,
+              private router: Router,
               private dialog: MatDialog) {
   }
 
@@ -62,10 +65,10 @@ export class MainComponent implements OnInit {
     this.connecterService.getPeople().then((value => {
       this.people = Array.of(value);
     }));
-    this.people = Array.of([1, 2, 3, 4, 5]);
   }
 
   getIncidencies() {
+
     this.connecterService.getIncidencies().then(value => {
       for (const incidencia of value) {
         this.layers.push(marker([incidencia.latitude, incidencia.longitude], {
@@ -120,6 +123,14 @@ export class MainComponent implements OnInit {
         lng: this.lon
       });
     });
+  }
+
+  setScreen(int: number) {
+    this.screen = int;
+  }
+
+  tancarSessio() {
+    this.router.navigate(['/login']);
   }
 
 

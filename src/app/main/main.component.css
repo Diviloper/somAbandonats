@@ -24,3 +24,21 @@
   color: white;
   background-color: #713096;
 }
+
+.screen{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  flex-direction: column;
+}
+
+.screen h1{
+  font-size: 30px;
+}
+
+.screen mat-icon{
+  font-size: 100px;
+  height: 100px;
+  width: 100px;
+}
