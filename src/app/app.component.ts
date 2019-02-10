@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'somAbandonats';
 
   constructor(private router: Router) {
-    this.router.navigate(['/main']);
+    this.router.navigate(['/login']);
   }
 }
