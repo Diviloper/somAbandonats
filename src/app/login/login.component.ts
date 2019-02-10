@@ -18,11 +18,11 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-
+    this.router.navigate(['/main']);
   }
 
   signin() {
-    this.router.navigate(['signin']);
+    this.router.navigate(['/signin']);
   }
 
 }
